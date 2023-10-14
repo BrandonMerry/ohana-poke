@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ohana Poké</title>
+    <link rel="icon" type="image/x-icon"
+        href="https://lh3.googleusercontent.com/7l6zBOrg-qSq4HxugPLoApVXfJzqT5VBwO9MfxceNQWxQp-9yvaf66nCb9ZWV3CpKOmhNjmMKnKq7jCZSu8JwacvL6mm6Dw0kk71ogY=w500-rw">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="./assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- TOP-->
+    <div class="relative pb-24 lg:pb-1">
+
+        <div class="">
+            <!-- Navigation -->
+            <div class="mx-auto container xl:px-0 px-4">
+                <!-- Desktop -->
+                <nav>
+                    <div class="xl:flex hidden items-center justify-between py-6 ">
+                        <a href="./home.html">
+                            <img loading="lazy"
+                                src="https://lh3.googleusercontent.com/7l6zBOrg-qSq4HxugPLoApVXfJzqT5VBwO9MfxceNQWxQp-9yvaf66nCb9ZWV3CpKOmhNjmMKnKq7jCZSu8JwacvL6mm6Dw0kk71ogY=w500-rw"
+                                class="w-24" alt="logo" />
+                        </a>
+                        <ul class="flex leading-loose">
+                            <a href="./home.html">
+                                <li
+                                    class="xl:text-2xl text-xl leading-8 mr-10 text-color-orange relative font-normal cursor-pointer text-hover">
+                                    Home
+                                    <hr class="border-4 border-color-orange bg-color-orange w-10 absolute right-0" />
+                                </li>
+                            </a>
+                            <a href="./ohana-menu.html">
+                                <li
+                                    class="xl:text-2xl text-xl leading-8 mr-10 text-color-black flex flex-col items-end justify-end font-normal cursor-pointer text-hover">
+                                    Menu</li>
+                            </a>
+
+                            <a href="./about.html">
+                                <li
+                                    class="xl:text-2xl text-xl leading-8 mr-10 text-color-black flex flex-col items-end justify-end font-normal cursor-pointer text-hover">
+                                    About</li>
+                            </a>
+                            <a href="./contact.html">
+                                <li
+                                    class="xl:text-2xl text-xl leading-8 mr-10 text-color-black flex flex-col items-end justify-end font-normal cursor-pointer text-hover">
+                                    Contact</li>
+                            </a>
+
+                        </ul>
+                    </div>
+                </nav>
+                <!-- Desktop -->
+                <!-- Mobile -->
+                <nav class="xl:hidden z-40 pt-2 relative">
+                    <div class="flex py-1 justify-between items-center px-4">
+                        <div>
+                            <img loading="lazy"
+                                src="https://lh3.googleusercontent.com/7l6zBOrg-qSq4HxugPLoApVXfJzqT5VBwO9MfxceNQWxQp-9yvaf66nCb9ZWV3CpKOmhNjmMKnKq7jCZSu8JwacvL6mm6Dw0kk71ogY=w500-rw"
+                                alt="logo" class="w-12" />
+                        </div>
+                        <div class="visible flex items-center">
+                            <ul id="list"
+                                class="hidden p-2 border-r bg-white absolute rounded top-0 left-0 right-0 shadow mt-12 md:mt-16">
+                                <li
+                                    class="flex cursor-pointer text-hover text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2">
+                                    <a href="./home.html">
+                                        <span class="ml-2 font-bold">Home</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col cursor-pointer text-hover text-gray-600 text-sm leading-3 tracking-normal py-2 flex justify-center"
+                                    onclick="dropdownHandler(this)">
+                                    <a href="./foodies-menu.html">
+                                        <span class="ml-2 font-bold">Menu</span>
+                                    </a>
+                                </li>
+                                <li
+                                    class="flex cursor-pointer text-hover text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
+                                    <a href="./about.html">
+                                        <span class="ml-2 font-bold">About</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col cursor-pointer text-hover text-gray-600 text-sm leading-3 tracking-normal py-2 flex justify-center"
+                                    onclick="dropdownHandler(this)">
+                                    <a href="./contact.html">
+                                        <span class="ml-2 font-bold">Contact</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                            <div class="xl:hidden">
+                                <svg id="open" onclick="MenuHandler(true)" aria-haspopup="true" aria-label="Main Menu"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="show-m-menu icon icon-tabler icon-tabler-menu" width="28" height="28"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                    <line x1="4" y1="8" x2="20" y2="8"></line>
+                                    <line x1="4" y1="16" x2="20" y2="16"></line>
+                                </svg>
+                                <div id="close" class="hidden close-m-menu" onclick="MenuHandler(false)">
+                                    <svg aria-label="Close" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <line x1="18" y1="6" x2="6" y2="18" />
+                                        <line x1="6" y1="6" x2="18" y2="18" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- Mobile -->
+            </div>
+            <!-- Navigation -->
+            <!-- Navigation -->
+            <!-- Hero -->
+            <div class="mx-auto container relative z-20 lg:px-0 px-4">
+                <div class="flex lg:flex-row flex-col-reverse items-center justify-between lg:mt-24">
+                    <div class="lg:w-1/2 lg:pt-0 pt-8">
+                        <h1 class="text-6xl lg:block hidden leading-115 border-l-8 border-color-blue pl-12">
+                            Craving for<br />
+                            <span class="2xl:text-8xl text-7xl font-bold"> Poké Bowls? </span>
+                        </h1>
+                        <h1 class="text-3xl lg:hidden block leading-8 border-l-8 border-color-blue pl-2 xl:mt-0 mt-8">
+                            Craving for<br />
+                            <span class="text-4xl font-bold"> Poké Bowls? </span>
+                        </h1>
+                        <h1
+                            class="lg:text-2xl text-lg text-color-gray lg:leading-8 leading-6 mt-6 border-l-8 border-color-blue lg:pl-12 pl-2 py-2">
+                            Generous amounts of Poké accompanied with a wide variety of
+                            vegetable, toppings and superfoods.</h1>
+                        <div class="flex items-center justify-center mt-12">
+                            <a href="./foodies-menu.html"> <button
+                                    class="xl:py-5 py-2 xl:px-16 px-6 bg-color-orange 2xl:text-3xl lg:text-xl text-base font-semibold leading-loose text-white focus:outline-none hover:opacity-90 border-2 border-color-orange b-r-10 mr-10">View
+                                    Menu</button></a>
+                            <a href="https://food.order.place/home/brand/204866784428032(modal:directory/brand/204866784428032)?brandId=204866784428032"
+                                target="_blank">
+                                <button
+                                    class="xl:py-5 py-2 xl:px-16 px-6 border-color-orange 2xl:text-3xl lg:text-xl text-base font-semibold leading-loose text-color-orange focus:outline-none button-transparent border-2 border-color-orange b-r-10">Order
+                                    Poké Online</button>
+                            </a>
+                        </div>
+
+
+                    </div>
+                    <div class="lg:w-1/2 height-main-hero xl:block hidden">
+                        <img loading="lazy" src="./assets/photos/herobg-desktop.png" class="w-full" />
+                    </div>
+                    <div class="xl:w-1/2 xl:hidden block">
+                        <img loading="lazy" src="./assets/photos/herobg-desktop.png" class="object-cover" />
+                    </div>
+                </div>
+            </div>
+            <!-- Hero -->
+        </div>
+    </div>
+    <!-- hero -->
+
+
+    <!-- START partners   -->
+
+    <div class="mx-auto container z-40 lg:mt-10  mt-20 lg:px-0 px-4">
+        <div class="flex items-center justify-center  md:flex-row">
+            <hr class="w-2.5 h-16 bg-color-blue md:order-1" />
+            <h1 class="text-4xl font-bold dark-blue-text  lg:pr-7 pl-7 md:pl-0"><span class="text-2xl font-normal">
+                    Poke
+                </span>
+                Delivery</h1>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-2 mt-16 lg:grid-cols-4 gap-4 mt-8">
+            <!-- Div 1 -->
+            <div class="bg-white rounded p-4 text-center shadow">
+                <img src="https://taplink.st/p/d/4/b/1/49501974.jpg?0" alt="Master Chef"
+                    class="w-20 h-20 mx-auto mb-4 rounded-full">
+                <h5 class="text-xl font-semibold">GrabFood</h5>
+                <div class="my-4 flex flex-col items-center justify-center lg:flex-row">
+                    <a
+                        href="https://food.grab.com/th/en/restaurant/ohana-poke-%E0%B9%82%E0%B8%AD%E0%B8%AE%E0%B8%B2%E0%B8%99%E0%B8%B2-%E0%B9%82%E0%B8%9B%E0%B9%8A%E0%B8%B0%E0%B9%80%E0%B8%81%E0%B8%B0-%E0%B8%95%E0%B8%B6%E0%B8%81%E0%B8%8B%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%8B%E0%B8%B5-delivery/3-CYTHG7WCTT6ZGJ">
+                        <button
+                            class="xl:py-2 py-1 xl:px-6 px-3 text-color-orange xl:text-xl lg:text-base text-sm font-semibold leading-loose text-white focus:outline-none group-hover:text-hover-color-orange underline transition-colors duration-300">All
+                            Season</button>
+                    </a>
+                    <a
+                        href="https://food.grab.com/th/en/restaurant/ohana-poke-habito-mall-%E0%B8%8B%E0%B8%AD%E0%B8%A2%E0%B8%A3%E0%B8%B4%E0%B8%A1%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%82%E0%B8%99%E0%B8%87-delivery/3-C23YRYU2AJDWVE ">
+                        <button
+                            class="xl:py-2 py-1 xl:px-6 px-3 text-color-orange xl:text-xl lg:text-base text-sm font-semibold leading-loose text-white focus:outline-none group-hover:text-hover-color-orange underline transition-colors duration-300">Habito</button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Div 2 -->
+            <div class="bg-white rounded p-4 text-center shadow">
+                <img src="https://taplink.st/p/9/a/4/e/49547964.png?0" alt="Quality Food"
+                    class="w-20 h-20 mx-auto mb-4 rounded-full">
+                <h5 class="text-xl font-semibold">Foodpanda</h5>
+                <div class="my-4  flex flex-col items-center justify-center lg:flex-row">
+                    <a href="https://www.foodpanda.co.th/chain/cg5km/ohana-poke">
+                        <button
+                            class="xl:py-2 py-1 xl:px-6 px-3 text-color-orange xl:text-xl lg:text-base text-sm font-semibold leading-loose text-white focus:outline-none group-hover:text-hover-color-orange underline transition-colors duration-300">All
+                            Season</button>
+                    </a>
+                    <a href="https://www.foodpanda.co.th/restaurant/vej3/ohana-poke-habito-mall">
+                        <button
+                            class="xl:py-2 py-1 xl:px-6 px-3 text-color-orange xl:text-xl lg:text-base text-sm font-semibold leading-loose text-white focus:outline-none group-hover:text-hover-color-orange underline transition-colors duration-300">Habito</button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Div 3 -->
+            <div class="bg-white rounded p-4 text-center shadow">
+                <img src="https://taplink.st/p/c/3/b/4/49548915.jpg?0" alt="Online Order"
+                    class="w-20 h-20 mx-auto mb-4 rounded-full">
+                <h5 class="text-xl font-semibold">Lineman</h5>
+                <div class="my-4  flex flex-col items-center justify-center lg:flex-row">
+                    <a
+                        href="https://www.wongnai.com/delivery/businesses/350110tz/order?af_channel=6811b061c4377abead060eb166716b1f&af_force_deeplink=true&c=share_link&pid=lineman_app">
+                        <button
+                            class="xl:py-2 py-1 xl:px-6 px-3 text-color-orange xl:text-xl lg:text-base text-sm font-semibold leading-loose text-white focus:outline-none group-hover:text-hover-color-orange underline transition-colors duration-300">All
+                            Season</button>
+                    </a>
+                    <a
+                        href="https://www.wongnai.com/delivery/businesses/422688Lw/order?af_channel=6811b061c4377abead060eb166716b1f&af_force_deeplink=true&c=share_link&pid=lineman_app">
+                        <button
+                            class="xl:py-2 py-1 xl:px-6 px-3 text-color-orange xl:text-xl lg:text-base text-sm font-semibold leading-loose text-white focus:outline-none group-hover:text-hover-color-orange underline transition-colors duration-300">Habito</button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Div 4 -->
+            <div class="bg-white rounded p-4 text-center shadow">
+                <img src="https://taplink.st/p/5/8/4/4/49548264.jpg?0" alt="24/7 Service"
+                    class="w-20 h-20 mx-auto mb-4 rounded-full">
+                <h5 class="text-xl font-semibold">Robinhood</h5>
+                <div class="my-4  flex flex-col items-center justify-center lg:flex-row">
+                    <a
+                        href="https://static.robinhood.in.th/share_link.html?utm_source=consumerapp&utm_medium=sharefavshopbutton&utm_campaign=sharefavshop&utm_content=53670&URI=robinhoodth://merchantlanding/id/53670">
+                        <button
+                            class="xl:py-2 py-1 xl:px-6 px-3 text-color-orange xl:text-xl lg:text-base text-sm font-semibold leading-loose text-white focus:outline-none group-hover:text-hover-color-orange underline transition-colors duration-300">All
+                            Season</button>
+                    </a>
+                    <a
+                        href="https://static.robinhood.in.th/share_link.html?utm_source=consumerapp&utm_medium=sharefavshopbutton&utm_campaign=sharefavshop&utm_content=157013&URI=robinhoodth://merchantlanding/id/157013">
+                        <button
+                            class="xl:py-2 py-1 xl:px-6 px-3 text-color-orange xl:text-xl lg:text-base text-sm font-semibold leading-loose text-white focus:outline-none group-hover:text-hover-color-orange underline transition-colors duration-300">Habito</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- END partners   -->
+
+    <!-- DishOfDay -->
+
+    <div class="mx-auto container z-40 lg:mt-40  mt-20 xl:px-0 px-4">
+        <div class="flex items-center  justify-center">
+            <hr class="w-2.5 h-16 bg-color-blue" />
+            <h1 class="text-4xl font-bold text-color-black pl-7">Weekly<span class="text-2xl font-normal"> Specials
+                </span></h1>
+        </div>
+        <div class="flex items-center justify-center mt-16 pt-12">
+            <div class="relative">
+                <img loading="lazy" src="./assets/photos/dishs_of_week.jpeg" class="relative" />
+
+                <!-- mobile tag for dis name -->
+
+                <!-- <div class="flex items-center relative justify-center w-full lg:hidden block">
+                    <div class="absolute flex items-center justify-center -mt-40 -ml-48 md:-mt-64 md:-ml-64">
+                        <img loading="lazy" src="https://cdn.tuk.dev/assets/templates/foodies/text-text.png" alt=""
+                            class="absolute md:w-48 w-40" />
+                        <p class="lg:text-2xl text-xs font-bold text-white ml-8 mr-2 relative">EGG FENEL SALAD</p>
+                    </div>
+                </div> -->
+
+                <!-- large tag to tell dish name for single dish -->
+                <!-- <div class="absolute lg:block hidden bg-strip bottom-40 xl:left-20 left-10 xl:ml-8 xl:pt-0 pt-16">
+                    <div class="flex items-center justify-center">
+                        <img loading="lazy" src="https://cdn.tuk.dev/assets/templates/foodies/text-text.png" alt=""
+                            class="absolute" />
+                        <div class="text-2xl font-bold text-white relative">Tuna Surfer</div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- DishOfDay -->
+    <!-- takeALookAtMenu -->
+    <div class="mx-auto container z-40 lg:mt-40 mt-20 lg:px-0 px-4">
+        <div class="flex items-center justify-center mt-16 md:flex-row">
+            <hr class="w-2.5 h-16 bg-color-blue md:order-1" />
+            <h1 class="text-4xl font-bold text-color-black lg:pr-7 pl-7 md:pl-0"><span class="text-2xl font-normal"> Our
+                </span>
+                Menu</h1>
+        </div>
+        <div class="lg:flex items-center justify-center mt-24 h-full">
+            <div class="lg:w-1/4 relative">
+                <img loading="lazy" src="https://cdn.tuk.dev/assets/templates/foodies/bg-menu.png"
+                    class="absolute left-0 top-0 z-0 -mt-7 lg:block hidden" />
+                <!-- top left -->
+                <img loading="lazy" src="./assets/photos/top_left_menu.jpeg"
+                    class="w-full h-full relative z-10 lg:pl-7 lg:my-0 my-4" />
+                <!-- bottom left -->
+                <img loading="lazy" src="./assets/photos/bottom_left_menu.jpeg"
+                    class="w-full h-full lg:pt-7 lg:my-0 my-4" />
+            </div>
+            <div class="lg:w-1/3 lg:mx-8">
+                <!-- top middle -->
+                <img loading="lazy" src="./assets/photos/top_middle_rl.jpeg"
+                    class="w-full h-full lg:-pt-4 lg:my-0 my-4" />
+                <!-- bottom middle -->
+                <img loading="lazy" src="./assets/photos/bottom_middle.jpeg"
+                    class="w-full h-full lg:pt-3 lg:my-0 my-4" />
+            </div>
+            <div class="lg:w-1/4">
+                <!-- top right large -->
+                <img loading="lazy" src="./assets/photos/top_right_menu.jpeg"
+                    class="w-full h-full lg:my-0 my-4 xl:block hidden" />
+                <!-- top right mobile -->
+                <img loading="lazy" src="./assets/photos/top_right_menu.jpeg"
+                    class="w-full h-full lg:my-0 my-4 xl:hidden block" />
+                <div class="relative">
+                    <!-- bottom right large -->
+                    <img loading="lazy" src="./assets/photos/bottom_right_menu.jpeg"
+                        class="w-full h-full lg:pt-7 relative z-10 lg:pr-7 lg:pb-7 lg:my-0 my-4" />
+                    <!-- bottom right mobile -->
+                    <img loading="lazy" src="https://cdn.tuk.dev/assets/templates/foodies/bg-menu.png"
+                        class="lg:block hidden absolute right-0 bottom-0 z-0 2xl:h-72 h-48 lg:my-0 my-4" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex items-center justify-center xl:mt-25 mt-12">
+        <a href="./ohana-menu.html">
+            <button
+                class="py-2.5 lg:px-11 px-6 lg:text-3xl text-base font-semibold leading-loose text-color-orange focus:outline-none button-transparent border-2 border-color-orange b-r-10 lg:mr-10">Browse
+                Menu</button>
+        </a>
+    </div>
+    <!-- takeALookAtMenu -->
+    <!-- servicesWeProvide -->
+    <div class="mx-auto container mt-40 xl:px-0 px-4">
+        <div class="flex items-center justify-center">
+            <hr class="w-2.5 h-16 bg-color-blue" />
+            <h1 class=" text-4xl font-bold text-color-black pl-7">Honest<span class="text-2xl font-normal"> people food
+                </span>
+            </h1>
+        </div>
+        <div class="items-center justify-center mt-16 xl:flex hidden">
+            <div class="card-width card-shadow cursor-pointer mr-7">
+                <div class="relative">
+                    <img loading="lazy" src="./assets/photos/dinein 400.jpeg" class="h-96 w-full" />
+                    <div class="bg-white w-full">
+                        <p class="p-f-f font-bold text-4xl text-color-orange absolute -mt-7 ml-5">01.</p>
+                        <p class="text-center text-2xl text-color-black py-8">Dine In/ Takeaway</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-width card-shadow cursor-pointer mr-7">
+                <div class="relative">
+                    <img loading="lazy" src="./assets/photos/catering400.jpeg" class="h-96 w-full" />
+                    <div class="bg-white w-full">
+                        <p class="p-f-f font-bold text-4xl text-color-orange absolute -mt-7 ml-5">02.</p>
+                        <p class="text-center text-2xl text-color-black py-8">Catering & Events</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-width card-shadow cursor-pointer">
+                <div class="relative">
+                    <img loading="lazy" src="./assets/photos/community envolvement 422.jpeg" class="h-96 w-full" />
+                    <div class="bg-white w-full">
+                        <p class="p-f-f font-bold text-4xl text-color-orange absolute -mt-7 ml-5">03.</p>
+                        <p class="text-center text-2xl text-color-black py-8">Community Involvement </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile -->
+        <div class="block items-center justify-center mt-16 xl:hidden px-4">
+            <div class="card-shadow cursor-pointer mb-8">
+                <div class="relative">
+                    <img loading="lazy" src="./assets/photos/dinein 400.jpeg" class="xl:h-96 h-full w-full" />
+                    <div class="bg-white w-full">
+                        <p class="p-f-f font-bold text-4xl text-color-orange absolute -mt-7 ml-5">01.</p>
+                        <p class="text-center text-2xl text-color-black py-8">Dine In/ Takeaway</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-shadow cursor-pointer mb-8">
+                <div class="relative">
+                    <img loading="lazy" src="./assets/photos/catering400.jpeg" class="xl:h-96 h-full w-full" />
+                    <div class="bg-white w-full">
+                        <p class="p-f-f font-bold text-4xl text-color-orange absolute -mt-7 ml-5">02.</p>
+                        <p class="text-center text-2xl text-color-black py-8">Catering & Events</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-shadow cursor-pointer mb-8">
+                <div class="relative">
+                    <img loading="lazy" src="./assets/photos/community envolvement 422.jpeg"
+                        class="xl:h-96 h-full w-full" />
+                    <div class="bg-white w-full">
+                        <p class="p-f-f font-bold text-4xl text-color-orange absolute -mt-7 ml-5">03.</p>
+                        <p class="text-center text-2xl text-color-black py-8">Community Involvemen</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile -->
+    </div>
+    <!-- servicesWeProvide -->
+    <!-- aboutUs -->
+    <div class="mt-40 mb-20 ">
+        <div class="items-center justify-center xl:flex hidden">
+            <div class="relative">
+                <img loading="lazy" src="https://cdn.tuk.dev/assets/templates/foodies/bg-menu.png"
+                    class="absolute left-0 top-0 z-0 h-52 w-56" />
+                <img loading="lazy" src="./assets/photos/ohana_left.png" class="mt-8 ml-8 relative z-10 abt-us-img" />
+                <div class="flex items-center transform -rotate-90 absolute left-0 bottom-0 -ml-20 mb-36">
+                    <p class="text-lg font-semibold leading-snug text-justify text-color-orange mr-2">OHANA</p>
+                    <hr class="w-12 bg-color-orange h-1 border-color-orange mr-8" />
+                </div>
+            </div>
+            <div class="about-us-card py-14 px-7 border border-color-black mx-10">
+                <p class="text-2xl font-bold text-color-black text-black text-center">About Us</p>
+                <p class="text-base leading-7 text-center  pt-4 text-color-black ">Here is what you
+                    always need. View our
+                    food collection and order yummy and healthy food within minutes. Here is what you always need. View
+                    our food collection and order yummy and healthy food within minutes ....</p>
+                <div class="flex about-us-card text-center justify-center mt-2">
+                    <a href="./about.html">
+                        <button
+                            class="py-2.5 lg:px-6 px-6  lg:text-l text-base font-semibold text-color-orange hover:text-black  lg:mr-16">
+                            Learn More</button>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="relative">
+                <img loading="lazy" src="./assets/photos/about_right.png" class="abt-us-img -mt-8 mr-8 relative z-10" />
+                <img loading="lazy" src="https://cdn.tuk.dev/assets/templates/foodies/bg-menu.png"
+                    class="absolute bottom-0 right-0 -mb-8 z-0 h-64" />
+                <div class="flex items-center transform -rotate-90 absolute right-0 top-0 -mr-14">
+                    <hr class="w-12 bg-color-orange h-1 border-color-orange mr-2" />
+                    <p class="text-lg font-semibold leading-snug text-justify text-color-orange mr-8">POKÉ</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- mobile -->
+        <div class="items-center justify-center xl:hidden flex flex-col px-4">
+            <div class="">
+                <img loading="lazy" src="./assets/photos/ohana_left.png" />
+                <div class="flex items-center justify-end my-2">
+                    <hr class="w-12 bg-color-orange h-1 border-color-orange mr-8" />
+                    <p class="text-lg font-semibold leading-snug text-justify text-color-orange mr-2">OHANA</p>
+                </div>
+            </div>
+            <div class="py-14 px-7 border border-color-black my-4">
+                <p class="text-2xl font-bold text-color-black  text-center">About Us</p>
+                <p class="text-base leading-7 text-justify text-color-black  pt-4">Here is what you always need. View
+                    our
+                    food collection and order yummy and healthy food within minutes. Here is what you always need. View
+                    our food collection and order yummy and healthy food within minutes ....</p>
+            </div>
+            <div class="flex items-center justify-center xl:mt-36 mt-12 mb-12">
+                <a href="./about.html">
+                    <button
+                        class="py-2.5 lg:px-11 px-6 lg:text-3xl text-base font-semibold leading-loose text-color-orange focus:outline-none button-transparent border-2 border-color-orange b-r-10 lg:mr-10">
+                        Learn More</button>
+                </a>
+            </div>
+            <div class="">
+                <img loading="lazy" src="./assets/photos/about_right.png" />
+                <div class="flex items-center justify-end right-0 top-0 my-2">
+                    <hr class="w-12 bg-color-orange h-1 border-color-orange mr-8" />
+                    <p class="text-lg font-semibold leading-snug text-justify text-color-orange"> POKÉ</p>
+                </div>
+            </div>
+
+            <!-- mobile -->
+        </div>
+        <!-- end aboutUs -->
+        <!-- reviews  -->
+    </div>
+    <!--end about us -->
+
+    <!-- Footer -->
+    <div class="bg-color-orange text-white pt-20 pb-10 mt-5">
+        <div class="container mx-auto  md:pl-25">
+
+            <div class="flex flex-wrap justify-center mx-4">
+                <!-- Column 1 -->
+                <div class="w-full md:w-1/4 px-4 mb-8">
+                    <!-- Logo -->
+                    <div class="mb-4 text-center">
+                        <img src="https://lh3.googleusercontent.com/7l6zBOrg-qSq4HxugPLoApVXfJzqT5VBwO9MfxceNQWxQp-9yvaf66nCb9ZWV3CpKOmhNjmMKnKq7jCZSu8JwacvL6mm6Dw0kk71ogY=w500-rw"
+                            alt="Company Logo" class="mx-auto h-20">
+                    </div>
+                    <!-- Company Logo Description -->
+                    <p class="text-center text-white rounded-full  text-l my-6">EAT WELL, LIVE WELL
+                    </p>
+                    <!-- links to order  -->
+                    <div class="grid grid-cols-4 gap-2 items-center pl-6">
+                        <div class="mb-2">
+                            <a href="./ohana-menu.html"
+                                class="text-white hover:text-primary text-md  hover:text-custom-hover-color">Menu</a>
+                        </div>
+                        <div class="mb-2">
+                            <a href="about.html"
+                                class=" text-white hover:text-primary text-md hover:text-custom-hover-color">About</a>
+                        </div>
+                        <div class="mb-2">
+                            <a href="./contact.html"
+                                class="text-white hover:text-primary text-md   hover:text-custom-hover-color">Contact</a>
+                        </div>
+                        <div class="mb-2">
+                            <a href="./home.html"
+                                class="text-white hover:text-primary text-md   hover:text-custom-hover-color">Home</a>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Column 2 allseason -->
+                <div class="w-full md:w-1/4 px-4 mb-8 md:pl-20">
+                    <h4 class="text-white font-normal text-2xl mb-4">All Seasons Place</h4>
+                    <a href="https://maps.app.goo.gl/ZRwP9Pt8nf3phLVW6" target="_blank"
+                        class="text-left  mb-2 hover:text-custom-hover-color">
+                        <i class="fas fa-map-marker-alt mr-3" style="color: #93DDDA;"></i> #336, 3rd Floor, Witthayu Rd
+                    </a>
+                    <p class="text-left mb-2 text-white">
+                        <a href="tel:0986156996" class="flex items-center hover:text-custom-hover-color">
+                            <i class="fas fa-phone-alt mr-3 py-3 " style="color: #93DDDA;"></i>
+                            098 615 6996
+                        </a>
+                    </p>
+                    <h5 class="text-light font-normal  text-white text-left blue-underline">Monday - Sunday</h5>
+
+                    <p class="text-left text-sm text-white pt-2">11:00AM - 9:00PM</p>
+
+                </div>
+
+                <!-- Column 3 Habito -->
+                <div class="w-full md:w-1/4 px-4 mb-8 md:pl-20">
+                    <h4 class="text-primary text-white font-normal text-2xl mb-4">Habito Mall</h4>
+                    <a href="https://maps.app.goo.gl/1kEpTiEVLoTJs6286" target="_blank"
+                        class="text-left mb-2 hover:text-custom-hover-color">
+                        <i class="fas fa-map-marker-alt mr-3" style="color: #93DDDA;"></i> 1 Sukhumvit 77,
+                        Prakhanong
+                    </a>
+                    <p class="text-white text-left mb-2">
+                        <a href="tel:0986156996" class="flex items-center hover:text-custom-hover-color">
+                            <i class="fas fa-phone-alt mr-3 py-3" style="color: #93DDDA;"></i>
+                            099 228 0830
+                        </a>
+                    </p>
+
+                    <h5 class=" text-white text-light font-normal text-left blue-underline">Monday - Sunday</h5>
+                    <p class="text-white text-left text-sm pt-2">11:00AM - 8:00PM</p>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="w-full md:w-1/4 px-4 mb-8 md:pl-20">
+                    <h4 class="text-white text-primary font-normal text-2xl mb-4">Connect with Us</h4>
+
+                    <!-- First Row of Images -->
+                    <div class="mb-1">
+                        <a href="https://page.line.me/258mjkoe?openQrModal=true" target="_blank"
+                            class="text-white flex items-center text-left hover:text-custom-hover-color">
+                            <i class=" fab fa-line text-2xl mr-2"></i>
+                            <h5 class="text-white  hover:text-custom-hover-color">Line</h5>
+                        </a>
+                    </div>
+
+                    <!-- Second Row of Images -->
+                    <div class="mb-1">
+                        <a href="whatsapp://send?phone=66626350830&text=Hi" target="_blank"
+                            class="text-white  flex items-center text-left hover:text-custom-hover-color"">
+                            <i class=" fab fa-whatsapp text-2xl mr-2"></i>
+                            <h5 class="text-white  hover:text-custom-hover-color">WhatsApp</h5>
+                        </a>
+                    </div>
+
+                    <!-- Third Row of Images -->
+                    <div class="mb-1">
+                        <a href="https://www.instagram.com/theohanapoke/" target="_blank"
+                            class="text-white  flex items-center text-left hover:text-custom-hover-color"">
+                            <i class=" fab fa-instagram text-2xl mr-2"></i>
+                            <h5 class="text-white  hover:text-custom-hover-color">Instagram</h5>
+                        </a>
+                    </div>
+
+                    <!-- Fourth Row of Images -->
+                    <div>
+                        <a href="https://www.facebook.com/theohanapoke" target="_blank"
+                            class="text-white  flex items-center text-left hover:text-custom-hover-color"">
+                            <i class=" fab fa-facebook text-2xl mr-2"></i>
+                            <h5 class="text-white  hover:text-custom-hover-color">Facebook</h5>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="pt-10 flex justify-center items-center">
+            <img loading="lazy" src="https://cdn.tuk.dev/assets/templates/foodies/tm.png" class="pr-4" />
+            <p class="lg:text-base text-xs text-white leading-5">2023 Ohana Poké, All rights reserved</p>
+        </div>
+    </div>
+    <!-- Footer -->
+
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
